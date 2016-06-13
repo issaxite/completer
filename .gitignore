@@ -3,6 +3,7 @@ node_modules
 releases
 archives
 docs
+_*
 
 # Windows image file caches
 Thumbs.db
