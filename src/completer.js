@@ -334,6 +334,8 @@
         focus: this.enable,
         blur: this.disable
       });
+      
+      this.$element.removeData('completer');
     }
   };
 
