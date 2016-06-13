@@ -1,13 +1,12 @@
-# [Completer](https://github.com/fengyuanchen/completer)
+# Completer
 
-A jQuery auto complete plugin.
+> A simple jQuery auto complete plugin.
 
-- [Documentation](http://fengyuanchen.github.io/completer)
+- [Website](https://fengyuanchen.github.io/completer)
 
 
 
 # Getting started
-
 
 
 ## Quick start
@@ -42,9 +41,16 @@ Initialize with `$.fn.completer` method.
 ```
 
 ```javascript
-$(".completer").completer({
-  source: ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "live.com", "aol.com"],
-  separator: "@"
+$('.completer').completer({
+  source: [
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'outlook.com',
+    'live.com',
+    'aol.com'
+  ],
+  separator: '@'
 });
 ```
 
@@ -52,10 +58,11 @@ $(".completer").completer({
 
 ## Options
 
-Setup with `$("#target").completer(options)`, or global setup with `$.fn.completer.setDefaults(options)`.
+You may set completer options with `$().completer(options)`.
+If you want to change the global default options, You may use `$.fn.completer.setDefaults(options)`.
 
 
-#### complete
+### complete
 
 - Type: `Function`
 - Default: `function() {}`
@@ -63,32 +70,32 @@ Setup with `$("#target").completer(options)`, or global setup with `$.fn.complet
 Will be run when complete.
 
 
-#### itemTag
+### itemTag
 
 - Type: `String`
-- Default: `"li"`
+- Default: `'li'`
 
 The element tag of list item.
 
 
-#### filter
+### filter
 
 - Type: `Function`
-- Default: `function(val) { return val; }`
+- Default: `function(val) { return val }`
 
 The function will be passed the input value and run before show the list.
 
 
-#### position
+### position
 
 - Type: `String`
-* options: "top", "right", "bottom", "left"
-- Default: `"bottom"`
+- Options: `'top'`, `'right'`, `'bottom'` and `'left'`
+- Default: `'bottom'`
 
 The position of the container.
 
 
-#### source
+### source
 
 - Type: `Array`
 - Default: `[]`
@@ -96,23 +103,23 @@ The position of the container.
 The source data for complete or suggest.
 
 
-#### selectedClass
+### selectedClass
 
 - Type: `String`
-- Default: `"completer-selected"`
+- Default: `'completer-selected'`
 
 A jQuery selector string, highlight the item when it's selected.
 
 
-#### separator
+### separator
 
 - Type: `String`
-- Default: `""`
+- Default: `''`
 
 This will be added between the value and attachment.
 
 
-#### suggest
+### suggest
 
 - Type: `Boolean`
 - Default: `false`
@@ -120,15 +127,15 @@ This will be added between the value and attachment.
 Set it `true` to start the suggestion mode.
 
 
-#### template
+### template
 
 - Type: `String`
-- Default: `<ul class="completer-container"></ul>`
+- Default: `'<ul class="completer-container"></ul>'`
 
 The container of the completer.
 
 
-#### zIndex
+### zIndex
 
 - Type: `Number`
 - Default: `1`
@@ -139,24 +146,46 @@ The css `z-index` property for the container.
 
 ## Methods
 
-#### destroy()
+### destroy()
 
 Destroy the completer instance.
 
 
 
-## Browser Support
+## No conflict
 
-- IE 6+
-- Chrome 33+
-- Firefox 27+
-- Safari 5.1+
-- Opera 19+
+If you have to use other plugin with the same namespace, just call the `$.fn.completer.noConflict` method to revert to it.
 
-As a jQuery plugin, you can reference to the [jQuery Browser Support](http://jquery.com/browser-support/).
+```html
+<script src="other-plugin.js"></script>
+<script src="completer.js"></script>
+<script>
+  $.fn.completer.noConflict();
+  // Code that uses other plugin's "$().completer" can follow here.
+</script>
+```
 
 
 
-## [License](https://github.com/fengyuanchen/completer/blob/master/LICENSE.md)
+## Browser support
 
-Released under the [MIT](http://opensource.org/licenses/mit-license.html) license.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Opera (latest)
+- Edge (latest)
+- Internet Explorer 8+
+
+As a jQuery plugin, you also need to see the [jQuery Browser Support](http://jquery.com/browser-support/).
+
+
+
+## Versioning
+
+Maintained under the [Semantic Versioning guidelines](http://semver.org/).
+
+
+
+## License
+
+[MIT](http://opensource.org/licenses/MIT) © [Fengyuan Chen](http://chenfengyuan.com)
