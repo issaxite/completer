@@ -2,12 +2,13 @@ module.exports = function (grunt) {
 
   'use strict';
 
+  var now = new Date();
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
     clean: {
       dist: ['dist'],
-      build: ['build/<%= pkg.version %>.<%= grunt.template.today("yyyymmdd") %>'],
       release: ['releases/<%= pkg.version %>'],
       site: ['_gh_pages']
     },
@@ -37,8 +38,8 @@ module.exports = function (grunt) {
         }
       },
       site: {
-        src: 'docs/js/docs.js',
-        dest: '_gh_pages/js/docs.js'
+        src: 'docs/js/main.js',
+        dest: '_gh_pages/js/main.js'
       }
     },
 
@@ -51,10 +52,10 @@ module.exports = function (grunt) {
             replacement: '<%= pkg.version %>'
           }, {
             match: 'YEAR',
-            replacement: (new Date()).getFullYear()
+            replacement: now.getFullYear()
           }, {
             match: 'DATE',
-            replacement: (new Date()).toISOString()
+            replacement: now.toISOString()
           }]
         },
         files: [{
@@ -116,8 +117,8 @@ module.exports = function (grunt) {
         dest: 'dist/<%= pkg.name %>.min.css'
       },
       site: {
-        src: 'docs/css/docs.css',
-        dest: '_gh_pages/css/docs.css'
+        src: 'docs/css/main.css',
+        dest: '_gh_pages/css/main.css'
       }
     },
 
@@ -191,10 +192,9 @@ module.exports = function (grunt) {
   // Loading dependencies
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('build', ['clean:build', 'copy:build']);
   grunt.registerTask('release', ['clean:release', 'copy:release']);
   grunt.registerTask('docs', ['copy:docsCSS', 'copy:docsJS']);
   grunt.registerTask('site', ['clean:site', 'uglify:site', 'cssmin:site', 'copy:siteCSS', 'copy:siteJS', 'htmlmin']);
 
-  grunt.registerTask('default', ['clean:dist', 'jshint', 'jscs', 'uglify:dist', 'copy:dist', 'replace', 'csslint', 'autoprefixer', 'csscomb', 'cssmin:dist', 'build', 'release', 'docs', 'site']);
+  grunt.registerTask('default', ['clean:dist', 'jshint', 'jscs', 'uglify:dist', 'copy:dist', 'replace', 'csslint', 'autoprefixer', 'csscomb', 'cssmin:dist', 'release', 'docs', 'site']);
 };

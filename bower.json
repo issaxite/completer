@@ -1,10 +1,14 @@
 {
   "name": "completer",
-  "version": "0.1.2",
+  "description": "A simple jQuery auto complete plugin.",
+  "main": [
+    "dist/completer.js",
+    "dist/completer.css"
+  ],
   "homepage": "https://github.com/fengyuanchen/completer",
-  "authors": "Fengyuan Chen",
-  "description": "A jQuery auto complete plugin.",
-  "main": "dist/completer.js",
+  "authors": [
+    "Fengyuan Chen"
+  ],
   "keywords": [
     "auto",
     "complete",
@@ -24,12 +28,10 @@
     "bower_components",
     "test",
     "tests",
-    "build",
-    "release",
     "demos",
     "docs"
   ],
   "dependencies": {
-    "jquery": ">= 1.9.0"
+    "jquery": ">= 1.9.1"
   }
 }
