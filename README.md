@@ -2,4 +2,4 @@
 
 > A simple jQuery auto complete plugin.
 
-- [Website](http://fengyuanchen.github.io/completer)
+- [Website](https://fengyuanchen.github.io/completer)
