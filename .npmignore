@@ -1,0 +1,9 @@
+# Files to ignore
+
+bower_components
+demo
+docs
+/_*
+/.*
+bower.json
+Gruntfile.js
