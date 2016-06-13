@@ -9,34 +9,43 @@
  */
 
 .completer-container {
-  position: absolute;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-family: inherit;
   font-size: 14px;
   line-height: normal;
+
+  position: absolute;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
   list-style: none;
-  background-color: #fff;
+
   border: 1px solid #ccc;
   border-bottom-color: #39f;
+  background-color: #fff;
 }
 
 .completer-container li {
-  padding: .5em .8em;
-  margin: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+  margin: 0;
+  padding: .5em .8em;
+
   cursor: pointer;
-  background-color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
   border-bottom: 1px solid #eee;
+  background-color: #fff;
 }
 
 .completer-container .completer-selected,
 .completer-container li:hover {
   margin-left: -1px;
-  background-color: #eee;
+
   border-left: 1px solid #39f;
+  background-color: #eee;
 }
