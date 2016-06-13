@@ -26,6 +26,8 @@
   var $window = $(window);
   var $document = $(document);
   var NAMESPACE = 'completer';
+  var EVENT_RESIZE = 'resize';
+  var EVENT_MOUSE_DOWN = 'mousedown';
 
   function Completer(element, options) {
     this.$element = $(element);
@@ -321,14 +323,14 @@
 
     show: function () {
       this.$completer.show();
-      $window.on('resize', $.proxy(this.place, this));
-      $document.on('mousedown', $.proxy(this.hide, this));
+      $window.on(EVENT_RESIZE, $.proxy(this.place, this));
+      $document.on(EVENT_MOUSE_DOWN, $.proxy(this.hide, this));
     },
 
     hide: function () {
       this.$completer.hide();
-      $window.off('resize', this.place);
-      $document.off('mousedown', this.hide);
+      $window.off(EVENT_RESIZE, this.place);
+      $document.off(EVENT_MOUSE_DOWN, this.hide);
     },
 
     destroy: function () {
