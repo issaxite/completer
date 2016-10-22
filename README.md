@@ -1,5 +1,6 @@
 # Completer
 
+[![CDNJS](https://img.shields.io/cdnjs/v/completer.svg)](https://cdnjs.com/libraries/completer)
 > A simple jQuery auto complete plugin.
 
 - [Website](https://fengyuanchen.github.io/completer)
