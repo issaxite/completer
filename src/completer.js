@@ -6,6 +6,7 @@
  * Released under the MIT license
  *
  * Date: @DATE
+ * extender: issax
  */
 
 (function (factory) {
